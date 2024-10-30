@@ -1,0 +1,169 @@
+/* Reset e estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e9ecef;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #099e65;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os botões */
+}
+
+.nav-buttons a {
+    text-decoration: none;
+    display: flex;
+    align-items: center; /* Alinha a imagem verticalmente */
+    justify-content: center; /* Centraliza a imagem horizontalmente */
+    padding: 10px 20px;
+    background-color: #04583b;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s, padding 0s; /* Evita que o padding mude com transições */
+    height: 40px; /* Define uma altura fixa */
+}
+
+.nav-buttons a:hover {
+    background-color: #06cb51;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Coloca o submenu logo abaixo do botão */
+    left: 0;
+    background-color: #06cb51;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    min-width: 160px;
+    border-radius: 5px;
+    z-index: 9999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra para destacar o submenu */
+}
+
+.submenu li {
+    border-bottom: 1px solid #044533; /* Cor similar à cor de fundo do submenu */
+    min-width: 200px; /* Aumenta a largura mínima para acomodar nomes grandes */
+    
+}
+
+.submenu li:last-child {
+    border-bottom: none;
+}
+
+.submenu li > a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s; /* Adiciona uma transição suave ao hover */
+}
+
+.submenu li > a:hover {
+    background-color: #04583b; /* Cor igual ao hover do botão */
+}
+
+/* Exibe o submenu ao passar o mouse sobre a div.dropdown */
+.dropdown:hover .submenu {
+    display: block;
+}
+
+/* Corrige o padding do botão com submenu */
+.dropdown > a {
+    padding: 10px 20px; /* Mantém o padding fixo */
+    height: 40px; /* Garante a altura fixa */
+}
+
+.dropdown:hover > a {
+    background-color: #06cb51;
+}
+
+.nav-buttons img.nav-icon {
+    max-width: 40px;
+    height: auto;
+}
+
+.nav-buttons a:hover img.nav-icon {
+    filter: brightness(1.2);
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #099e65;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .nav-buttons {
+        flex-direction: column;
+        align-items: center; /* Centraliza os botões em telas menores */
+    }
+
+    .nav-buttons a {
+        margin-bottom: 15px; /* Espaço adicional entre os botões em telas menores */
+        width: 100%; /* Ajusta o tamanho dos botões para ocupar a largura */
+    }
+
+    .submenu {
+        position: static; /* Garante que o submenu seja exibido corretamente */
+        width: 100%; /* Submenu ocupa a largura total */
+        box-shadow: none; /* Remove a sombra em telas menores */
+    }
+
+    footer {
+        position: static;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-buttons a {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0; /* Aumenta o padding interno dos botões */
+    }
+
+    main {
+        margin: 10px;
+        padding: 15px;
+    }
+}
+
+
+
+
+

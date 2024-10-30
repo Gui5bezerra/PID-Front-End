@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrolife</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset e estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ecef;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            padding: 10px;
+            background-color: #099e65;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 40px; /* Aumenta o espaçamento entre os botões */
+            position: relative; /* Necessário para o submenu */
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            padding: 5px 15px; /* Aumenta o padding interno dos botões */
+            background-color: #04583b;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            position: relative; /* Necessário para o submenu */
+        }
+
+        .nav-buttons a:hover {
+            background-color: #06cb51;
+        }
+
+        .dropdown {
+            position: relative; /* Necessário para o submenu */
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%; /* Coloca o submenu logo abaixo do botão */
+            left: 0;
+            background-color: #06cb51; /* Cor igual ao fundo do botão */
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            min-width: 160px;
+            border-radius: 5px; /* Para combinar com o estilo dos botões */
+            z-index: 1000; /* Garante que o submenu fique acima de outros elementos */
+        }
+
+        .submenu li {
+            border-bottom: 1px solid #044533; /* Cor similar à cor de fundo do submenu */
+        }
+
+        .submenu li:last-child {
+            border-bottom: none;
+        }
+
+        .submenu li > a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .submenu li > a:hover {
+            background-color: #06cb51; /* Cor igual ao hover do botão */
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1px;
+            background-color: #099e65;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center; /* Centraliza os botões em telas menores */
+            }
+
+            .nav-buttons a {
+                margin-bottom: 15px; /* Espaço adicional entre os botões em telas menores */
+            }
+
+            footer {
+                position: static;
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-buttons a {
+                width: 100%;
+                text-align: center;
+                padding: 12px 0; /* Aumenta o padding interno dos botões */
+            }
+
+            main {
+                margin: 10px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-buttons">
+            <a href="index.html"><img src="home.png" alt="home" class="nav-icon"></a>
+            <div class="dropdown">
+                <a href="#">Cadastro</a>
+                <ul class="submenu">
+                    <li><a href="animal.html">Animal</a></li>
+                    <li><a href="curral.html">Curral</a></li>
+                    <li><a href="lote.html">Lote</a></li>
+                    <li><a href="medicacao.html">Medicação</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a href="#">Manejo</a>
+                <ul class="submenu">
+                    <li><a href="identificacao.html">Identificação</a></li>
+                    <li><a href="movimentacao.html">Movimentação</a></li>
+                    <li><a href="saida.html">Saída</a></li>
+                    <li><a href="troca_curral.html">Troca de Curral em lote</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a href="#">Sanidade</a>
+                <ul class="submenu">
+                    <li><a href="aplicacao_individual.html">Aplicação Individual</a></li>
+                    <li><a href="protocolo_sanitario.html">Protocolo Sanitário</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a href="#">Ronda</a>
+                <ul class="submenu">
+                    <li><a href="registrar_morte.html">Registrar Morte</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a href="#">Relatorios</a>
+                <ul class="submenu">
+                    <li><a href="historico_animal.html">Histórico Animal</a></li>
+                    <li><a href="doencas_recorrentes.html">Doenças Recorrentes</a></li>
+                    <li><a href="animais_medicados.html">Animais Medicados</a></li>
+                    <li><a href="manejo_do_dia.html">Manejo do Dia</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>  
+    <main>
+        <h1>Registrar Morte da Ronda</h1>
+    </main>
+    <footer>
+        &copy; 2024 Guilherme Bezerra
+    </footer>
+</body>
+</html>
